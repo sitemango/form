@@ -1,18 +1,18 @@
-/* ===== DARK MODE & GLASSMORPHISM TOKENS ===== */
+/* WITH THIS (Light mode default + Dark mode support): */
 :root {
-  --bg: #09090b;
-  --bg-soft: #18181b;
-  --text-main: #f8fafc;
-  --text-muted: #a1a1aa;
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
   
-  --saffron: #f59e0b;
-  --saffron-dk: #d97706;
+  --saffron: #eab308;
+  --saffron-dk: #ca8a04;
   --danger: #ef4444;
   --success: #10b981;
   
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-bg-hover: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(15, 23, 42, 0.08);
   --glass-blur: 16px;
   
   --radius-sm: 8px;
@@ -23,6 +23,40 @@
   --ff: 'Noto Sans Devanagari', sans-serif;
 }
 
+[data-theme="dark"] {
+  --bg: #09090b;
+  --bg-soft: #18181b;
+  --text-main: #f8fafc;
+  --text-muted: #a1a1aa;
+  
+  --saffron: #f59e0b;
+  --saffron-dk: #d97706;
+  
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.theme-toggle:hover {
+  background: var(--glass-bg-hover);
+  transform: scale(1.05);
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
