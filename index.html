@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>बालसंस्कार फेस्टिवल २०२६ | श्री राधाकृष्ण फ्रेंड्स क्लब</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav glass-panel-heavy">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">
+      <span class="dot"></span>
+      <span data-festival-name>बालसंस्कार फेस्टिवल २०२६</span>
+    </a>
+    <div class="nav-links">
+      <a href="#intro">फेस्टिव्हलबद्दल</a>
+      <a href="#gallery">क्षणचित्रे</a>
+      <a href="#competitions">स्पर्धा</a>
+      <a href="#workshops">कार्यशाळा</a>
+      <a href="#register">नोंदणी</a>
+    </div>
+    <a href="#register" class="nav-reg">नोंदणी करा</a>
+    <button id="navToggle" class="nav-toggle" aria-label="मेनू">☰</button>
+  </div>
+  <div id="mobileNav" class="mobile-nav glass-panel-heavy">
+    <a href="#intro">फेस्टिव्हलबद्दल</a>
+    <a href="#gallery">क्षणचित्रे</a>
+    <a href="#competitions">स्पर्धा</a>
+    <a href="#workshops">कार्यशाळा</a>
+    <a href="#register">नोंदणी करा</a>
+    <a href="#contact">संपर्क</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="home" class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="container hero-inner reveal">
+    <div class="hero-badge glass-panel">🏮 सांस्कृतिक महोत्सव</div>
+    <h1 data-festival-name>बालसंस्कार फेस्टिवल २०२६</h1>
+    <p class="hero-tagline" data-tagline></p>
+    <p class="hero-organizer" data-organizer></p>
+    <div class="hero-btns">
+      <a href="#register" class="btn btn-saffron">✨ नोंदणी करा</a>
+      <a href="#competitions" class="btn btn-glass">🎪 स्पर्धा पहा</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="intro" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-label">आमच्याविषयी</span>
+      <h2>फेस्टिव्हलचा उद्देश</h2>
+    </div>
+    <p id="aboutParagraph" class="about-text reveal"></p>
+    <div id="valuesGrid" class="values"></div>
+  </div>
+</section>
+
+<!-- SHOWCASE (GALLERY) -->
+<section id="gallery" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-label">स्मृतीचित्रे</span>
+      <h2>मागील क्षणांची झलक</h2>
+      <p>आमच्या सांस्कृतिक महोत्सवातील काही खास क्षण.</p>
+    </div>
+    <div class="gallery-track reveal" id="imageGallery">
+      <!-- Injected via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIONS -->
+<section id="competitions" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-label">स्पर्धा</span>
+      <h2>सहभागी होण्यासाठी स्पर्धा</h2>
+      <p>विद्यार्थी खालीलपैकी <strong>फक्त एका</strong> स्पर्धेत सहभागी होऊ शकतात.</p>
+    </div>
+    <div id="compGrid" class="comp-grid"></div>
+  </div>
+</section>
+
+<!-- WORKSHOPS -->
+<section id="workshops" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-label">कार्यशाळा</span>
+      <h2>विशेष कार्यशाळा आणि व्याख्याने</h2>
+      <p>या माहितीपूर्ण सत्रांना सर्वांसाठी उपस्थिती खुली आहे (नोंदणीची आवश्यकता नाही).</p>
+    </div>
+    <div id="workshopGrid" class="comp-grid"></div>
+    <p id="closingNote" class="closing-note reveal"></p>
+  </div>
+</section>
+
+<!-- REGISTRATION -->
+<section id="register" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-label">नोंदणी</span>
+      <h2>नोंदणी फॉर्म</h2>
+      <p>खालील माहिती भरून नोंदणी पूर्ण करा.</p>
+    </div>
+    <div class="form-wrap glass-panel reveal">
+      <div id="formMsg" class="form-msg"></div>
+      <form id="regForm" novalidate>
+        
+        <fieldset class="f-set">
+          <legend>👧 विद्यार्थ्याची माहिती</legend>
+          <div class="f-grid">
+            <div class="f-field">
+              <label for="studentName">विद्यार्थ्याचे नाव *</label>
+              <input type="text" id="studentName" name="studentName" placeholder="पूर्ण नाव">
+              <span class="err-txt"></span>
+            </div>
+            <div class="f-field">
+              <label for="school">शाळेचे नाव *</label>
+              <input type="text" id="school" name="school" placeholder="शाळेचे नाव">
+              <span class="err-txt"></span>
+            </div>
+            <div class="f-field">
+              <label for="studentClass">इयत्ता *</label>
+              <input type="text" id="studentClass" name="studentClass" placeholder="उदा. ५ वी">
+              <span class="err-txt"></span>
+            </div>
+            <div class="f-field">
+              <label for="age">वय *</label>
+              <input type="number" id="age" name="age" placeholder="वय" min="2" max="20">
+              <span class="err-txt"></span>
+            </div>
+            <div class="f-field span2" id="genderField">
+              <label>लिंग *</label>
+              <div class="gender-row">
+                <label><input type="radio" name="gender" value="मुलगा"> मुलगा</label>
+                <label><input type="radio" name="gender" value="मुलगी"> मुलगी</label>
+                <label><input type="radio" name="gender" value="इतर"> इतर</label>
+              </div>
+              <span class="err-txt"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="f-set">
+          <legend>👨‍👩‍👧 पालकांची माहिती</legend>
+          <div class="f-grid">
+            <div class="f-field">
+              <label for="parentName">पालकांचे नाव *</label>
+              <input type="text" id="parentName" name="parentName" placeholder="पालकांचे पूर्ण नाव">
+              <span class="err-txt"></span>
+            </div>
+            <div class="f-field">
+              <label for="phone">मोबाईल क्रमांक *</label>
+              <input type="tel" id="phone" name="phone" placeholder="१० अंकी क्रमांक" maxlength="10">
+              <span class="err-txt"></span>
+            </div>
+            <div class="f-field span2">
+              <label for="address">पत्ता *</label>
+              <textarea id="address" name="address" rows="2" placeholder="संपूर्ण पत्ता"></textarea>
+              <span class="err-txt"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- SINGLE Competition Radio Selection -->
+        <fieldset class="f-set" id="compSelectWrap">
+          <legend>🏆 एक स्पर्धा निवडा *</legend>
+          <div id="compSelectGrid" class="comp-sel-grid"></div>
+        </fieldset>
+
+        <button type="submit" id="submitBtn" class="btn btn-saffron btn-block">नोंदणी सादर करा</button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="successPanel" class="success-panel">
+        <div class="ico">🎉</div>
+        <h3>नोंदणी यशस्वी झाली!</h3>
+        <p>आपली नोंदणी यशस्वीरित्या स्वीकारली गेली आहे. धन्यवाद 🙏</p>
+        <div class="reg-badge glass-panel" id="regIdDisplay">BSF26-0000</div>
+        <div class="success-btns">
+          <button type="button" id="newRegBtn" class="btn btn-glass">🔁 आणखी एक नोंदणी</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer glass-panel-heavy" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4 data-festival-name>बालसंस्कार फेस्टिवल २०२६</h4>
+        <p data-organizer></p>
+      </div>
+      <div>
+        <h4>संपर्क</h4>
+        <p>शिरवळ, ता. खंडाळा, जि. सातारा, महाराष्ट्र</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span data-year></span> श्री राधाकृष्ण फ्रेंड्स क्लब. सर्व हक्क राखीव.
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="form.js"></script>
+<script src="google-sheets.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
