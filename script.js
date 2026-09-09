@@ -1,4 +1,32 @@
+// ADD THIS AT THE VERY TOP OF script.js (Line 1):
+function initTheme() {
+  const themeToggleBtn = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('bsf_theme') || 'light';
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggleBtn) {
+      themeToggleBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+  }
+
+  applyTheme(savedTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('bsf_theme', newTheme);
+      applyTheme(newTheme);
+    });
+  }
+}
+
+// THEN INSIDE document.addEventListener('DOMContentLoaded', () => { ... }), CALL IT AT THE TOP:
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme(); // <--- Add this as the first line inside DOMContentLoaded
+  
+  // ... rest of your script.js code ...
   
   // 1. Fill Text Config
   document.querySelectorAll('[data-festival-name]').forEach(el => el.textContent = CONFIG.festivalName);
